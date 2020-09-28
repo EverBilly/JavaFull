@@ -80,7 +80,7 @@ public class Coche {
      //This sirve para acceder a la variable de la clase
      //para diferenciar cuando mandamos un argumento por un metodo
      //si tienen el mismo nombre
-        if(asientos_cuero == "si"){
+        if(asientos_cuero.equalsIgnoreCase("si")){
             this.asientos_cuero = true;
         }
         else {
@@ -90,14 +90,14 @@ public class Coche {
 
     //SETTER 
     public void configura_climatizador(String climatizador) {
-        if (climatizador == "si") {
+        if (climatizador.equalsIgnoreCase("si")) {
             this.climatizador = true;
         } else {
             this.climatizador = false;
         }
     }
 
-    //GETTER Y SETTER
+    //GETTER Y SETTER establecemos el valor de una variable y obtenemos una variable
     public String dime_peso_coche() {
         int peso_carroceria = 500;
         peso_total = peso_plataforma + peso_carroceria;
