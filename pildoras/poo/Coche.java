@@ -29,17 +29,50 @@ public class Coche {
         + " kg";
     }
 
+    //Metodo GETTER del SETTER establecer_color
+    public String color_coche() {
+        return "El color del Coche es: " + color;
+    }
+
+    //GETTER
+    public String dime_asientos() {
+        if(asientos_cuero == true) {
+            return "El coche tiene asientos de cuero";
+        }
+        else {
+            return "No tiene asientos de serie";
+        }
+    }
+
+    //GETTER
+    public String dime_climatizador() {
+        if(climatizador == true) {
+            return "El auto tiene climatizador";
+        }
+        else {
+            return "El auto no tiene climatizador";
+        }
+    }
+
+    //GETTER
+    public int precio_coche() {
+        int precio_final = 10000;
+
+        if(asientos_cuero == true) {
+            precio_final += 2000;
+        }
+        if(climatizador == true) {
+            precio_final += 1500;
+        }
+
+        return precio_final;
+    }
+
     //Metodo SETTER sirve para establecer el valor de la propiedad de los objetos
     //Void no devuelve nada
     public void establecer_color(String colocar_color) {
         // color = "Blue";
         color = colocar_color;
-
-    }
-
-    //Metodo GETTER del SETTER establecer_color
-    public String color_coche() {
-        return "El color del Coche es: " + color;
     }
 
     //SETTER
@@ -55,33 +88,12 @@ public class Coche {
         }
     }
 
-    //GETTER
-    public String dime_asientos() {
-        if(asientos_cuero == true) {
-            return "El coche tiene asientos de cuero";
-        }
-        else {
-            return "No tiene asientos de serie";
-        }
-    }
-
     //SETTER 
     public void configura_climatizador(String climatizador) {
         if (climatizador == "si") {
             this.climatizador = true;
-        }
-        else {
+        } else {
             this.climatizador = false;
-        }
-    }
-
-    //GETTER
-    public String dime_climatizador() {
-        if(climatizador == true) {
-            return "El auto tiene climatizador";
-        }
-        else {
-            return "El auto no tiene climatizador";
         }
     }
 
@@ -89,28 +101,14 @@ public class Coche {
     public String dime_peso_coche() {
         int peso_carroceria = 500;
         peso_total = peso_plataforma + peso_carroceria;
-        
-        if(asientos_cuero == true) {
+
+        if (asientos_cuero == true) {
             peso_total = peso_total + 50;
         }
-        if(climatizador == true) {
+        if (climatizador == true) {
             peso_total = peso_total + 50;
         }
 
         return "El peso del coche es: " + peso_total;
-    }
-
-    //GETTER
-    public int precio_coche() {
-        int precio_final = 10000;
-
-        if(asientos_cuero == true) {
-            precio_final += 2000;
-        }
-        if(climatizador == true) {
-            precio_final += 1500;
-        }
-
-        return precio_final;
     }
 }

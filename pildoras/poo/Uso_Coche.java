@@ -1,3 +1,4 @@
+package poo;
 public class Uso_Coche {
     public static void main(String[] args) {
         //Instanciar la clase para crear Objetos

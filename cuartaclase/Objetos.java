@@ -5,7 +5,9 @@ class Person {
 public class Objetos {
     public static void main(String[] args) {
         Person p;
+        // System.out.println(p);
         p = new Person();
+        // System.out.println(p);
 
         Person p2 = new Person();   //p2                (person2)
         p2.nombre = "Jose";
