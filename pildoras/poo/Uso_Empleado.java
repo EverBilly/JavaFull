@@ -19,10 +19,11 @@ public class Uso_Empleado {
         System.out.println("Nombre: " + empleado3.getNombre() + " Sueldo: " + empleado3.getSueldo()
                 + " Fecha de Contratacion: " + empleado3.getAltaContrato());*/
 
-        Empleado[] empleados = new Empleado[3];
+        Empleado[] empleados = new Empleado[4];
         empleados[0] = new Empleado("Juan", 7000, 2019, 8, 01);
         empleados[1] = new Empleado("Ever", 7500, 2020, 11, 01);
         empleados[2] = new Empleado("Fernanda", 5000, 2019, 02, 01);
+        empleados[3] = new Empleado("Jose Luis");
 
         //FOR NORMAL
         System.out.println("FOR NORMAL");
@@ -67,6 +68,13 @@ class Empleado {
         altaContrato = fecha_calendario.getTime();
 
         //Herencia: Construir una clase que herede de otra
+    }
+
+    //Otro Constructor, Sobrecarga de Constructores
+    //Varios constructores no pueden llamar la misma cantidad de argumentos
+    public Empleado(String nom) {
+//        this.nombre = nom;
+        this(nom, 6500, 2015, 2, 1);
     }
 
     //GETTER
