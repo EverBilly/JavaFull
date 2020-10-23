@@ -1,4 +1,4 @@
-// package poo;
+//package poo;
 
 //Solo debe haber una public class en el archivo de java 
 //Las demas pueden ser Class nombre_clase

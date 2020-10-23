@@ -19,11 +19,16 @@ public class Uso_Empleado {
         System.out.println("Nombre: " + empleado3.getNombre() + " Sueldo: " + empleado3.getSueldo()
                 + " Fecha de Contratacion: " + empleado3.getAltaContrato());*/
 
-        Empleado[] empleados = new Empleado[4];
+        Jefatura jefe_RRHH = new Jefatura("Marcos", 7000,2016,1,1);
+        jefe_RRHH.setIncentivo(2500);
+
+        Empleado[] empleados = new Empleado[6];
         empleados[0] = new Empleado("Juan", 7000, 2019, 8, 01);
         empleados[1] = new Empleado("Ever", 7500, 2020, 11, 01);
         empleados[2] = new Empleado("Fernanda", 5000, 2019, 02, 01);
         empleados[3] = new Empleado("Jose Luis");
+        empleados[4] = jefe_RRHH; //Polimorfismo en Accion. Principio de Sustitucion
+        empleados[5] = new Jefatura("Diana", 5000, 2018, 5, 1);
 
         //FOR NORMAL
         System.out.println("FOR NORMAL");
@@ -104,4 +109,21 @@ class Empleado {
     private String nombre;
     private double sueldo;
     private Date altaContrato;
+}
+
+class Jefatura extends Empleado {
+    private double incentivo;
+
+        public Jefatura(String nombre, double sueldo, int anio, int mes, int dia) {
+            super(nombre, sueldo, anio, mes, dia);
+        }
+
+        public void setIncentivo(double incentivo) {
+            this.incentivo = incentivo;
+        }
+
+        public double getSueldo() {
+            double sueldoJefe = super.getSueldo();
+            return sueldoJefe + incentivo;
+        }
 }

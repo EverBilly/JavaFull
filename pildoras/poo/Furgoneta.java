@@ -1,3 +1,5 @@
+//package poo;
+
 public class Furgoneta extends Coche {
 
     private int capacidad_carga;
@@ -9,5 +11,9 @@ public class Furgoneta extends Coche {
         super();//Da un estado inicial a la clase Coche()
         this.capacidad_carga = capacidad_carga;
         this.plazas_extra = plazas_extra;
+    }
+
+    public String getDatosFurgoneta() {
+         return "La capacidad de carga es: " + capacidad_carga + " y las plazas extras son: " + plazas_extra;
     }
 }
