@@ -30,6 +30,11 @@ public class Uso_Empleado {
         empleados[4] = jefe_RRHH; //Polimorfismo en Accion. Principio de Sustitucion
         empleados[5] = new Jefatura("Diana", 5000, 2018, 5, 1);
 
+        Jefatura jefa_Finanzas = (Jefatura) empleados[5];
+        jefa_Finanzas.setIncentivo(10000);
+
+        //Jefatura jefe_compras = (Jefatura) empleados[1];
+
         //FOR NORMAL
         System.out.println("FOR NORMAL");
         for (int i = 0; i < empleados.length; i++) {
@@ -126,4 +131,10 @@ class Jefatura extends Empleado {
             double sueldoJefe = super.getSueldo();
             return sueldoJefe + incentivo;
         }
+}
+
+class  Director extends Jefatura {
+    public Director(String nombre, double sueldo, int anio, int mes, int dia) {
+        super(nombre, sueldo, anio, mes, dia);
+    }
 }
