@@ -33,6 +33,18 @@ public class Uso_Empleado {
         Jefatura jefa_Finanzas = (Jefatura) empleados[5];
         jefa_Finanzas.setIncentivo(10000);
 
+        Empleado director_comercial = new Jefatura("Sandra", 6000, 2014, 05, 25);
+        Comparable comparable = new Empleado("Eliza", 4000, 2017, 01, 01);
+
+        System.out.println(jefa_Finanzas.tomar_decisiones("Dar mas Vacaciones a Empleados"));
+
+        if (director_comercial instanceof Empleado) {
+            System.out.println("Es de tipo Jefatura");
+        }
+        if (comparable instanceof Comparable) {
+            System.out.println("Implementa la interfaz Comparable");
+        }
+
         //Jefatura jefe_compras = (Jefatura) empleados[1];
 
         //FOR NORMAL
@@ -128,11 +140,16 @@ class Empleado implements Comparable {
     }
 }
 
-class Jefatura extends Empleado {
+class Jefatura extends Empleado implements Jefes {
     private double incentivo;
 
         public Jefatura(String nombre, double sueldo, int anio, int mes, int dia) {
             super(nombre, sueldo, anio, mes, dia);
+        }
+
+        //Desarrollando metodo de la Interfaz Jefes
+        public String tomar_decisiones(String decision) {
+            return "Un miembro de la directiva ha tomado decision de: " + decision;
         }
 
         public void setIncentivo(double incentivo) {
