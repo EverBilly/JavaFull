@@ -53,6 +53,8 @@ public class Uso_Empleado {
             e.setSueldo(5);
         }
 
+        Arrays.sort(empleados);
+
         for (Empleado e : empleados) {
             System.out.println("Nombre: " + e.getNombre() +
                     " Sueldo: " + e.getSueldo() +
@@ -62,7 +64,7 @@ public class Uso_Empleado {
     }
 }
 
-class Empleado {
+class Empleado implements Comparable {
     //Recibir parametros en el constructor
     public Empleado(String nom, double sue, int anio, int mes, int dia) {
 
@@ -114,6 +116,16 @@ class Empleado {
     private String nombre;
     private double sueldo;
     private Date altaContrato;
+    public int compareTo(Object object) {
+        Empleado empleado = (Empleado) object;
+        if(this.sueldo < empleado.sueldo) {
+            return -1;
+        }
+        if(this.sueldo > empleado.sueldo) {
+             return 1;
+        }
+        return 0;
+    }
 }
 
 class Jefatura extends Empleado {
